@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Auto Unfollower</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 15px;
+            width: 220px;
+        }
+        h3 {
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+        .btn-start {
+            background-color: #28a745;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-start:hover {
+            background-color: #218838;
+        }
+        .btn-stop {
+            background-color: #dc3545;
+            color: white;
+        }
+        .btn-stop:hover {
+            background-color: #c82333;
+        }
+        .loading-icon {
+            display: none;
+            width: 16px;
+            height: 16px;
+            margin-left: 8px;
+            border: 2px solid white;
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .input-container {
+            margin-top: 10px;
+        }
+        .input-label {
+            color: gray;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+        .time-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .time-input {
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .adjust-btn {
+            width: 30px;
+            height: 30px;
+            font-size: 16px;
+            border: none;
+            background-color: #ddd;
+            cursor: pointer;
+            margin: 0 5px;
+            border-radius: 5px;
+        }
+        .following-page-btn {
+            width: 100%;
+            background-color: #e0e0e0;
+            color: #555;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            padding: 8px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .following-page-btn:hover {
+            background-color: #d6d6d6;
+        }
+        .footer {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #777;
+        }
+        .footer a {
+            text-decoration: none;
+            color: #555;
+            font-weight: bold;
+        }
+        .footer a:hover {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h3>LinkedIn Auto Unfollower</h3>
+
+    <button id="start" class="btn btn-start">
+        Start
+        <div class="loading-icon" id="loading"></div>
+    </button>
+    <button id="stop" class="btn btn-stop">Stopped</button>
+
+    <div class="input-container">
+        <div class="input-label">Wait time (second)</div>
+        <div class="time-container">
+            <button id="decrease" class="adjust-btn">-</button>
+            <input type="number" id="wait-time" class="time-input" value="3" min="1">
+            <button id="increase" class="adjust-btn">+</button>
+        </div>
+    </div>
+
+    <button id="following-page" class="following-page-btn">Following Page</button>
+
+    <div class="footer">
+        <a href="https://www.linkedin.com/in/ashkan-mf/" target="_blank">Developer</a> | 
+        <a href="https://github.com/ashkan261/linkedin-unfollow" target="_blank">Github</a>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
